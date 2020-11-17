@@ -1,3 +1,3 @@
-#sorting-algorithms
+# sorting-algorithms
 
-Some sorting algorithms that I have made in order to learn Java.
+Some sorting algorithms that I have made in order to learn Java and Git. 
