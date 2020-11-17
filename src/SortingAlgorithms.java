@@ -72,7 +72,7 @@ public class SortingAlgorithms {
                 }
             }
             for (int k = arr.length - i - 1; k > 0; k--) {      //Just add this for loop to a bubble sort, and
-                if (arr[k] < arr[k - 1]){                       //you've got a cocktail sort.
+                if (arr[k] < arr[k - 1]){                       //you've got a cocktail shaker sort.
                     int temp = arr[k];
                     arr[k] = arr[k - 1];
                     arr[k - 1] = temp;
