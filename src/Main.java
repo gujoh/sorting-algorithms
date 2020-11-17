@@ -32,7 +32,12 @@ public class Main {
         sort.cocktailShakerSort(arr);
         System.out.println(Arrays.toString(arr));
         sort.shuffleArray(arr);
+
+        //Insertion sort
+        System.out.println("Insertion sort");
+        sort.insertionSort(arr);
+        System.out.println(Arrays.toString(arr));
+        sort.shuffleArray(arr);
+
     }
-
-
 }

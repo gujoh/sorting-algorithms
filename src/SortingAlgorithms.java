@@ -15,8 +15,7 @@ public class SortingAlgorithms {
 
     public void shuffleArray(int[] arr){
         for(int i = 0; i < arr.length; i++){
-            int randElement = rand.nextInt(arr.length);
-            int temp = arr[i];
+            int randElement = rand.nextInt(arr.length), temp = arr[i];
             arr[i] = arr[randElement];
             arr[randElement] = temp;
         }
@@ -81,7 +80,17 @@ public class SortingAlgorithms {
         }
     }
 
-
+    public void insertionSort(int[] arr){
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i; j > 0 ; j--) {
+                if (arr[j] < arr[j - 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j - 1];
+                    arr[j - 1] = temp;
+                }
+            }
+        }
+    }
 
 
 
