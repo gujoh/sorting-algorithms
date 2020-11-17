@@ -3,6 +3,16 @@ import java.util.Random;
 public class SortingAlgorithms {
     Random rand = new Random();
 
+    //A COUPLE OF METHODS TO SETUP INITIAL ARRAY AND SHUFFLE IT ONCE IT HAS BEEN SORTED
+
+    public int[] createArray(){
+        int[] arr = new int[40];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = rand.nextInt(100);
+        }
+        return arr;
+    }
+
     public void shuffleArray(int[] arr){
         for(int i = 0; i < arr.length; i++){
             int randElement = rand.nextInt(arr.length);
@@ -12,13 +22,7 @@ public class SortingAlgorithms {
         }
     }
 
-    public int[] createArray(){
-        int[] arr = new int[40];
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = rand.nextInt(100);
-        }
-        return arr;
-    }
+    //SORTING ALGORITHMS START HERE//
 
     public void bubbleSort (int[] arr){
         for (int i = 0; i < arr.length; i++) {
