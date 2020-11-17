@@ -4,6 +4,8 @@ public class Main {
     public static void main (String[] args) {
         SortingAlgorithms sort = new SortingAlgorithms();
 
+        //new GUI();
+
         //Initial array
         int[] arr = sort.createArray();
         System.out.println("Initial array");

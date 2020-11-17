@@ -1,5 +1,4 @@
 import java.util.Random;
-
 public class SortingAlgorithms {
     Random rand = new Random();
 
@@ -70,7 +69,7 @@ public class SortingAlgorithms {
                     arr[j - 1] = temp;
                 }
             }
-            for (int k = arr.length - i - 1; k > 0; k--) {      //Just add this for loop to a bubble sort, and
+            for (int k = arr.length - i - 1; k > 0; k--) {      //Just add this for-loop to a bubble sort, and
                 if (arr[k] < arr[k - 1]){                       //you've got a cocktail shaker sort.
                     int temp = arr[k];
                     arr[k] = arr[k - 1];
