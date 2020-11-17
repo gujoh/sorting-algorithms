@@ -3,7 +3,7 @@ import java.util.Random;
 public class SortingAlgorithms {
     Random rand = new Random();
 
-    //A COUPLE OF METHODS TO SETUP INITIAL ARRAY AND SHUFFLE IT ONCE IT HAS BEEN SORTED
+    //A COUPLE OF METHODS TO SETUP INITIAL ARRAY AND SHUFFLE IT ONCE IT HAS BEEN SORTED//
 
     public int[] createArray(){
         int[] arr = new int[40];
