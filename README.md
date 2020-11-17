@@ -11,4 +11,5 @@ Some sorting algorithms that I have made in order to learn Java and Git.
 - Add more sorting algorithms.
 - Visualize the sorting algorithms somehow.
   - JavaFX? Java AWT? Java Swing?  
+- Optimize sorting algorithms. 
  
