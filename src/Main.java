@@ -26,6 +26,12 @@ public class Main {
         sort.selectionSort2(arr);
         System.out.println(Arrays.toString(arr));
         sort.shuffleArray(arr);
+
+        //Cocktail shaker sort
+        System.out.println("Cocktail shaker sort");
+        sort.cocktailShakerSort(arr);
+        System.out.println(Arrays.toString(arr));
+        sort.shuffleArray(arr);
     }
 
 
