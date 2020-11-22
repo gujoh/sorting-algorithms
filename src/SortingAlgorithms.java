@@ -91,11 +91,8 @@ public class SortingAlgorithms {
     }
 
     public void bogoSort(int[] arr){
-        while(!sorted(arr)){
-            int i = rand.nextInt(arr.length), j = rand.nextInt(arr.length), temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
-        }
+        while(!sorted(arr))
+            shuffleArray(arr);
     }
 
 
