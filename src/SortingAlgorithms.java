@@ -26,6 +26,13 @@ public class SortingAlgorithms {
         arr[y] = temp;
     }
 
+    public boolean sorted (int[] arr){
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] > arr[i + 1])
+                return false;
+        }
+        return true;
+    }
 
     //SORTING ALGORITHMS START HERE//
 
@@ -80,6 +87,14 @@ public class SortingAlgorithms {
                 if (arr[j] < arr[j - 1])
                     swap(arr, j, j  - 1);
             }
+        }
+    }
+
+    public void bogoSort(int[] arr){
+        while(!sorted(arr)){
+            int i = rand.nextInt(arr.length), j = rand.nextInt(arr.length), temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
         }
     }
 

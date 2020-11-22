@@ -41,5 +41,12 @@ public class Main {
         System.out.println(Arrays.toString(arr));
         sort.shuffleArray(arr);
 
+        /*
+        //Bogosort
+        System.out.println("Bogosort");
+        sort.bogoSort(arr);
+        System.out.println(Arrays.toString(arr));
+        sort.shuffleArray(arr);
+        */
     }
 }
