@@ -3,6 +3,7 @@
 Some sorting algorithms that I have made in order to learn Java and Git. 
 
 Sorting algorithms can now be visualised (although it is far from perfect)!
+
 Run MainGUI.java to see sorting algorithms in action.
 
 ## Files
