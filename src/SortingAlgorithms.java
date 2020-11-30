@@ -1,13 +1,19 @@
 import java.util.Random;
+
 public class SortingAlgorithms {
     Random rand = new Random();
+    private final int arrayLength;
+    private final int randomizerBound;
 
-    //A COUPLE OF METHODS TO SETUP INITIAL ARRAY AND SHUFFLE IT ONCE IT HAS BEEN SORTED//
+    public SortingAlgorithms (int arrayLength, int randomizerBound){
+        this.arrayLength = arrayLength;
+        this.randomizerBound = randomizerBound;
+    }
 
     public int[] createArray(){
-        int[] arr = new int[40];
+        int[] arr = new int[arrayLength];
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = rand.nextInt(100);
+            arr[i] = rand.nextInt(randomizerBound);
         }
         return arr;
     }
@@ -94,16 +100,4 @@ public class SortingAlgorithms {
         while(!sorted(arr))
             shuffleArray(arr);
     }
-
-
-
-
-
-
-
-
-
-
-
-
 }

@@ -1,10 +1,9 @@
 import java.util.Arrays;
 
 public class Main {
-    public static void main (String[] args) {
-        SortingAlgorithms sort = new SortingAlgorithms();
+    static SortingAlgorithms sort = new SortingAlgorithms(40, 100);
 
-        //new GUI();
+    public static void main (String[] args) {
 
         //Initial array
         int[] arr = sort.createArray();
@@ -14,39 +13,36 @@ public class Main {
         //Bubble sort
         System.out.println("Bubble sort");
         sort.bubbleSort(arr);
-        System.out.println(Arrays.toString(arr));
-        sort.shuffleArray(arr);
+        printAndShuffle(arr);
 
         //Selection sort v.1
         System.out.println("Selection sort v.1");
         sort.selectionSort(arr);
-        System.out.println(Arrays.toString(arr));
-        sort.shuffleArray(arr);
+        printAndShuffle(arr);
 
         //Selection sort v.2
         System.out.println("Selection sort v.2");
         sort.selectionSort2(arr);
-        System.out.println(Arrays.toString(arr));
-        sort.shuffleArray(arr);
-
+       printAndShuffle(arr);
         //Cocktail shaker sort
         System.out.println("Cocktail shaker sort");
         sort.cocktailShakerSort(arr);
-        System.out.println(Arrays.toString(arr));
-        sort.shuffleArray(arr);
+        printAndShuffle(arr);
 
         //Insertion sort
         System.out.println("Insertion sort");
         sort.insertionSort(arr);
-        System.out.println(Arrays.toString(arr));
-        sort.shuffleArray(arr);
+        printAndShuffle(arr);
 
-        /*
         //Bogosort
-        System.out.println("Bogosort");
+        /*System.out.println("Bogosort");
         sort.bogoSort(arr);
-        System.out.println(Arrays.toString(arr));
-        sort.shuffleArray(arr);
+        printAndShuffle(arr);
         */
+    }
+    private static void printAndShuffle(int[] arr){
+        System.out.println(Arrays.toString(arr));
+        System.out.println("Array is sorted:" + " " + sort.sorted(arr));
+        sort.shuffleArray(arr);
     }
 }
