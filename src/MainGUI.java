@@ -9,6 +9,7 @@ public class MainGUI extends JPanel {
     private final static int HEIGHT = 800;
     private final static int ELEMENT_HEIGHT = 4;
     private final static int ELEMENT_WIDTH = WIDTH/ARRAY_LENGTH;
+    private final static int WAIT = 2000;
     Random rand = new Random();
     int[] arr;
 
@@ -38,23 +39,23 @@ public class MainGUI extends JPanel {
     }
 
     private void sortingAlgorithms(){
-        wait(2000);
+        wait(WAIT);
         bubbleSort();
-        wait(2000);
+        wait(WAIT);
         shuffleArray();
-        wait(2000);
+        wait(WAIT);
         selectionSort();
-        wait(2000);
+        wait(WAIT);
         shuffleArray();
-        wait(2000);
+        wait(WAIT);
         selectionSort2();
-        wait(2000);
+        wait(WAIT);
         shuffleArray();
-        wait(2000);
+        wait(WAIT);
         cocktailShakerSort();
-        wait(2000);
+        wait(WAIT);
         shuffleArray();
-        wait(2000);
+        wait(WAIT);
         insertionSort();
         /*wait(2000);                   //Uncomment for Bogosort
         shuffleArray();
@@ -119,7 +120,7 @@ public class MainGUI extends JPanel {
 
     private void selectionSort2(){
         for (int i = 0; i < arr.length; i++) {
-            wait(50);
+            wait(60);
             repaint();
             int temp = arr[i], index = i;
             for (int j = i + 1; j < arr.length; j++) {
