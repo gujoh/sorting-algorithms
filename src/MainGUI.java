@@ -99,12 +99,12 @@ public class MainGUI extends JPanel {
         wait(3);
     }
 
-    private boolean sorted (){
+    private boolean notSorted(){
         for (int i = 0; i < arr.length - 1; i++) {
             if (arr[i] > arr[i + 1])
-                return false;
+                return true;
         }
-        return true;
+        return false;
     }
 
     private void bubbleSort () {
@@ -167,7 +167,7 @@ public class MainGUI extends JPanel {
     }
 
     private void bogoSort(){
-        while(!sorted())
+        while(notSorted())
             shuffleArray();
     }
 
@@ -184,14 +184,16 @@ public class MainGUI extends JPanel {
     }
 
     public void oddEvenSort(){
-        while (!sorted()){
-            for (int i = 0; i < arr.length; i+=2) {
-                if (i >= 2 && arr[i] < arr[i - 1])
-                    swap(arr, i , i - 1);
+        while (notSorted()){
+            for (int i = 0; i < arr.length - 1; i+=2) {
+                if (arr[i] > arr[i + 1]) {
+                    swap(arr, i, i + 1);
+                }
             }
-            for (int i = 1; i < arr.length; i+=2) {
-                if (i >= 3 && arr[i] < arr[i - 1])
-                    swap(arr, i , i - 1);
+            for (int i = 1; i < arr.length - 1; i+=2) {
+                if (arr[i] > arr[i + 1]) {
+                    swap(arr, i, i + 1);
+                }
             }
         }
     }
