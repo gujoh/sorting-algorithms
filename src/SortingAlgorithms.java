@@ -139,4 +139,26 @@ public class SortingAlgorithms {
             offset = Math.max(initialOffset/(int)Math.pow(k, i), 1);
         }
     }
+
+    public void shellSort(int[] arr){
+        int offset = arr.length/2;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length - offset; j++) {
+                if (arr[j] > arr[j + offset])
+                    swap(arr, j, j + offset);
+            }
+            offset = (int)Math.max(offset/1.2, 1);
+        }
+    }
+
+    public void weirdShellSortVariation(int[] arr) {
+        int offset = arr.length - 1;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length - offset; j++) {
+                if (arr[j] > arr[j + offset])
+                    swap(arr, j, j + offset);
+            }
+            offset = Math.max(--offset, 1);
+        }
+    }
 }

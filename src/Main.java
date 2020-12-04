@@ -1,3 +1,6 @@
+import org.w3c.dom.ls.LSOutput;
+
+import javax.crypto.spec.PSource;
 import java.util.Arrays;
 
 public class Main {
@@ -58,6 +61,16 @@ public class Main {
         //Comb Sort
         System.out.println("COMB SORT");
         sort.combSort(arr);
+        printAndShuffle(arr);
+
+        //Shell sort
+        System.out.println("SHELL SORT");
+        sort.shellSort(arr);
+        printAndShuffle(arr);
+
+        //Weird Shell sort variation
+        System.out.println("WEIRD SHELL SORT VARIATION");
+        sort.weirdShellSortVariation(arr);
         printAndShuffle(arr);
     }
 
