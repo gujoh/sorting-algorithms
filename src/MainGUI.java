@@ -113,7 +113,7 @@ public class MainGUI extends JPanel {
         }
     }
 
-    private void whatIsThisSortCalled(){               //Do not think this is a selection sort.
+    private void whatIsThisSortCalled(){
         for (int i = 0; i < arr.length; i++) {
             for (int j = i + 1; j < arr.length; j++) {
                 if (arr[j] < arr[i])
