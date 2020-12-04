@@ -42,47 +42,26 @@ public class MainGUI extends JPanel {
     private void sortingAlgorithms(){
         wait(WAIT);
         bubbleSort();
-        wait(WAIT);
-        shuffleArray();
-        wait(WAIT);
+        waitAndShuffle();
         whatIsThisSortCalled();
-        wait(WAIT);
-        shuffleArray();
-        wait(WAIT);
+        waitAndShuffle();
         selectionSort();
-        wait(WAIT);
-        shuffleArray();
-        wait(WAIT);
+        waitAndShuffle();
         cocktailShakerSort();
-        wait(WAIT);
-        shuffleArray();
-        wait(WAIT);
+        waitAndShuffle();
         insertionSort();
-        wait(WAIT);
-        shuffleArray();
-        wait(WAIT);
+        waitAndShuffle();
         gnomeSort();
-        wait(WAIT);
-        shuffleArray();
-        wait(WAIT);
+        waitAndShuffle();
         oddEvenSort();
-        wait(WAIT);
-        shuffleArray();
-        wait(WAIT);
+        waitAndShuffle();
         combSort();
-        wait(WAIT);
-        shuffleArray();
-        wait(WAIT);
+        waitAndShuffle();
         shellSort();
-        wait(WAIT);
-        shuffleArray();
-        wait(WAIT);
+        waitAndShuffle();
         weirdShellSortVariation();
-        /*wait(2000);                   //Uncomment for Bogosort
-        shuffleArray();
+        /*waitAndShuffle();         //Uncomment for Bogosort
         bogoSort();
-        wait(5000);
-        shuffleArray();
         */
     }
 
@@ -102,6 +81,12 @@ public class MainGUI extends JPanel {
             wait(8);
             repaint();
         }
+    }
+
+    private void waitAndShuffle(){
+        wait(WAIT);
+        shuffleArray();
+        wait(WAIT);
     }
 
     private void swap (int[] arr, int x, int y, int waitTime){
