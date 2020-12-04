@@ -61,6 +61,10 @@ public class MainGUI extends JPanel {
         shuffleArray();
         wait(WAIT);
         gnomeSort();
+        wait(WAIT);
+        shuffleArray();
+        wait(WAIT);
+        oddEvenSort();
         /*wait(2000);                   //Uncomment for Bogosort
         shuffleArray();
         bogoSort();
@@ -175,6 +179,19 @@ public class MainGUI extends JPanel {
             else if (arr[i - 1] > arr[i]) {
                 swap(arr, i, i - 1);
                 i--;
+            }
+        }
+    }
+
+    public void oddEvenSort(){
+        while (!sorted()){
+            for (int i = 0; i < arr.length; i+=2) {
+                if (i >= 2 && arr[i] < arr[i - 1])
+                    swap(arr, i , i - 1);
+            }
+            for (int i = 1; i < arr.length; i+=2) {
+                if (i >= 3 && arr[i] < arr[i - 1])
+                    swap(arr, i , i - 1);
             }
         }
     }

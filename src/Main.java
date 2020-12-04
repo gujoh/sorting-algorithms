@@ -47,6 +47,11 @@ public class Main {
         sort.bogoSort(arr);
         printAndShuffle(arr);
         */
+
+        //Odd-Even Sort
+        System.out.println("ODD-EVEN SORT");
+        sort.oddEvenSort(arr);
+        printAndShuffle(arr);
     }
 
     private static void printAndShuffle(int[] arr){
