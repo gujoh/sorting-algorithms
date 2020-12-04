@@ -1,5 +1,4 @@
-import java.awt.Dimension;
-import java.awt.Graphics;
+import java.awt.*;
 import java.util.Random;
 import javax.swing.*;
 
@@ -109,7 +108,7 @@ public class MainGUI extends JPanel {
         }
     }
 
-    private void selectionSort(){
+    private void selectionSort(){               //Do not think this is a selection sort.
         for (int i = 0; i < arr.length; i++) {
             for (int j = i + 1; j < arr.length; j++) {
                 if (arr[j] < arr[i])
@@ -185,7 +184,7 @@ public class MainGUI extends JPanel {
 
     public static void main(String[] args){
         SwingUtilities.invokeLater(() -> {
-            JFrame frame = new JFrame("Sort");
+            JFrame frame = new JFrame("Sorting Algorithm Visualizer");
             frame.add(new MainGUI());
             frame.pack();
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
