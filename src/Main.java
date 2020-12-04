@@ -17,12 +17,12 @@ public class Main {
         sort.bubbleSort(arr);
         printAndShuffle(arr);
 
-        //Selection sort v.1
+        //What is this sort called??
         System.out.println("WHAT IS THIS SORT??");
         sort.whatIsThisSortCalled(arr);
         printAndShuffle(arr);
 
-        //Selection sort v.2
+        //Selection sort
         System.out.println("SELECTION SORT");
         sort.selectionSort(arr);
         printAndShuffle(arr);
