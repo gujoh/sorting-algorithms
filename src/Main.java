@@ -1,7 +1,9 @@
 import java.util.Arrays;
 
 public class Main {
-    static SortingAlgorithms sort = new SortingAlgorithms(500, 500);
+    private final static int ARRAY_LENGTH = 10000;
+    private final static int RANDOMIZER_BOUND = 10000;
+    static SortingAlgorithms sort = new SortingAlgorithms(ARRAY_LENGTH, RANDOMIZER_BOUND);
 
     public static void main (String[] args) {
 
@@ -51,6 +53,11 @@ public class Main {
         //Odd-Even Sort
         System.out.println("ODD-EVEN SORT");
         sort.oddEvenSort(arr);
+        printAndShuffle(arr);
+
+        //Comb Sort
+        System.out.println("COMB SORT");
+        sort.combSort(arr);
         printAndShuffle(arr);
     }
 

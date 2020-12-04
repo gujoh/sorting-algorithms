@@ -127,4 +127,16 @@ public class SortingAlgorithms {
             }
         }
     }
+
+    public void combSort(int[] arr){
+        double k = 1.3;                     //1.3 is apparently a good number. Check Wikipedia page for Comb sort.
+        int initialOffset = arr.length - 1, offset = initialOffset;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length - offset; j++) {
+                if (arr[j] > arr[j + offset])
+                    swap(arr, j, j + offset);
+            }
+            offset = Math.max(initialOffset/(int)Math.pow(k, i), 1);
+        }
+    }
 }
