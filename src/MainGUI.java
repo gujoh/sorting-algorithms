@@ -10,6 +10,7 @@ public class MainGUI extends JPanel {
     private final static int ELEMENT_HEIGHT = 4;
     private final static int ELEMENT_WIDTH = WIDTH/ARRAY_LENGTH;
     private final static int WAIT = 2000;
+    private final static int SHORT_WAIT = 3;
     Random rand = new Random();
     int[] arr;
 
@@ -65,6 +66,10 @@ public class MainGUI extends JPanel {
         shuffleArray();
         wait(WAIT);
         oddEvenSort();
+        wait(WAIT);
+        shuffleArray();
+        wait(WAIT);
+        combSort();
         /*wait(2000);                   //Uncomment for Bogosort
         shuffleArray();
         bogoSort();
@@ -91,12 +96,12 @@ public class MainGUI extends JPanel {
         }
     }
 
-    private void swap (int[] arr, int x, int y){
+    private void swap (int[] arr, int x, int y, int waitTime){
         int temp = arr[x];
         arr[x] = arr[y];
         arr[y] = temp;
         repaint();
-        wait(3);
+        wait(waitTime);
     }
 
     private boolean notSorted(){
@@ -111,7 +116,7 @@ public class MainGUI extends JPanel {
         for (int i = 0; i < arr.length; i++) {
             for (int j = 1; j < arr.length - i; j++) {
                 if (arr[j - 1] > arr[j]) {
-                    swap(arr, j, j - 1);
+                    swap(arr, j, j - 1, SHORT_WAIT);
                 }
             }
         }
@@ -121,7 +126,7 @@ public class MainGUI extends JPanel {
         for (int i = 0; i < arr.length; i++) {
             for (int j = i + 1; j < arr.length; j++) {
                 if (arr[j] < arr[i])
-                    swap(arr, j, i);
+                    swap(arr, j, i, SHORT_WAIT);
             }
         }
     }
@@ -146,11 +151,11 @@ public class MainGUI extends JPanel {
         for (int i = 0; i < arr.length; i++) {
             for (int j = 1; j < arr.length - i; j++) {
                 if (arr[j - 1] > arr[j])
-                    swap(arr, j, j - 1);
+                    swap(arr, j, j - 1, SHORT_WAIT);
             }
             for (int k = arr.length - i - 1; k > 0; k--) {
                 if (arr[k] < arr[k - 1])
-                    swap(arr, k, k - 1);
+                    swap(arr, k, k - 1, SHORT_WAIT);
             }
         }
     }
@@ -161,7 +166,7 @@ public class MainGUI extends JPanel {
             for (int j = i; j > 0 ; j--) {
                 repaint();
                 if (arr[j] < arr[j - 1])
-                    swap(arr, j, j  - 1);
+                    swap(arr, j, j  - 1, SHORT_WAIT);
             }
         }
     }
@@ -171,30 +176,40 @@ public class MainGUI extends JPanel {
             shuffleArray();
     }
 
-    public void gnomeSort() {
+    private void gnomeSort() {
         int i = 0;
         while (i < arr.length) {
             if (i == 0 || arr[i - 1] <= arr[i])
                 i++;
             else if (arr[i - 1] > arr[i]) {
-                swap(arr, i, i - 1);
+                swap(arr, i, i - 1, SHORT_WAIT);
                 i--;
             }
         }
     }
 
-    public void oddEvenSort(){
+    private void oddEvenSort(){
         while (notSorted()){
             for (int i = 0; i < arr.length - 1; i+=2) {
-                if (arr[i] > arr[i + 1]) {
-                    swap(arr, i, i + 1);
-                }
+                if (arr[i] > arr[i + 1])
+                    swap(arr, i, i + 1, SHORT_WAIT);
             }
             for (int i = 1; i < arr.length - 1; i+=2) {
-                if (arr[i] > arr[i + 1]) {
-                    swap(arr, i, i + 1);
-                }
+                if (arr[i] > arr[i + 1])
+                    swap(arr, i, i + 1, SHORT_WAIT);
             }
+        }
+    }
+
+    public void combSort(){
+        double k = 1.3;                     //1.3 is apparently a good number. Check Wikipedia page for Comb sort.
+        int initialOffset = arr.length - 1, offset = initialOffset;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length - offset; j++) {
+                if (arr[j] > arr[j + offset])
+                    swap(arr, j, j + offset, 20);
+            }
+            offset = Math.max(initialOffset/(int)Math.pow(k, i), 1);
         }
     }
 
