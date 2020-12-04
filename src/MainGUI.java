@@ -228,9 +228,10 @@ public class MainGUI extends JPanel {
                 if (arr[j] > arr[j + offset])
                     swap(arr, j, j + offset, 10);
             }
-            offset = (int)Math.max(offset/1.2, 1);
-        }
+            offset = (int)Math.max(offset/1.2, 1);              //1.2 chosen arbitrarily.
+        }                                                       //Worked well with this array size (200).
     }
+
     public void weirdShellSortVariation() {
         int offset = arr.length - 1;
         for (int i = 0; i < arr.length; i++) {
