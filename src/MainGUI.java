@@ -44,11 +44,11 @@ public class MainGUI extends JPanel {
         wait(WAIT);
         shuffleArray();
         wait(WAIT);
-        selectionSort();
+        whatIsThisSortCalled();
         wait(WAIT);
         shuffleArray();
         wait(WAIT);
-        selectionSort2();
+        selectionSort();
         wait(WAIT);
         shuffleArray();
         wait(WAIT);
@@ -57,6 +57,10 @@ public class MainGUI extends JPanel {
         shuffleArray();
         wait(WAIT);
         insertionSort();
+        wait(WAIT);
+        shuffleArray();
+        wait(WAIT);
+        gnomeSort();
         /*wait(2000);                   //Uncomment for Bogosort
         shuffleArray();
         bogoSort();
@@ -109,7 +113,7 @@ public class MainGUI extends JPanel {
         }
     }
 
-    private void selectionSort(){               //Do not think this is a selection sort.
+    private void whatIsThisSortCalled(){               //Do not think this is a selection sort.
         for (int i = 0; i < arr.length; i++) {
             for (int j = i + 1; j < arr.length; j++) {
                 if (arr[j] < arr[i])
@@ -118,7 +122,7 @@ public class MainGUI extends JPanel {
         }
     }
 
-    private void selectionSort2(){
+    private void selectionSort(){
         for (int i = 0; i < arr.length; i++) {
             wait(60);
             repaint();
@@ -161,6 +165,18 @@ public class MainGUI extends JPanel {
     private void bogoSort(){
         while(!sorted())
             shuffleArray();
+    }
+
+    public void gnomeSort() {
+        int i = 0;
+        while (i < arr.length) {
+            if (i == 0 || arr[i - 1] <= arr[i])
+                i++;
+            else if (arr[i - 1] > arr[i]) {
+                swap(arr, i, i - 1);
+                i--;
+            }
+        }
     }
 
     private void wait(int ms){
