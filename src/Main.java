@@ -18,7 +18,7 @@ public class Main {
         printAndShuffle(arr);
 
         //What is this sort called??
-        System.out.println("WHAT IS THIS SORT??");
+        System.out.println("WHAT IS THIS SORT CALLED??");
         sort.whatIsThisSortCalled(arr);
         printAndShuffle(arr);
 
