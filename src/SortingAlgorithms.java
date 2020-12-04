@@ -51,13 +51,13 @@ public class SortingAlgorithms {
         }
     }
 
-    public void whatIsThisSortCalled(int[] arr){                //Is this actually a selection sort?
-        for (int i = 0; i < arr.length; i++) {                  //Or is selectionSort2() better despite being a little longer?
-            for (int j = i + 1; j < arr.length; j++) {          //This method swaps the value of index i in the array
-                if (arr[j] < arr[i])                            //as soon as it finds a smaller value to the right of it.
-                    swap(arr, j, i);                           //selectionSort2() on the other hand only swaps index i
-            }                                                   //when it has traversed the whole array to the right of i
-        }                                                       //and found a value smaller than i.
+    public void whatIsThisSortCalled(int[] arr){
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] < arr[i])
+                    swap(arr, j, i);
+            }
+        }
     }
 
     public void selectionSort(int[] arr){
@@ -105,10 +105,10 @@ public class SortingAlgorithms {
         int i = 0;
         while (i < arr.length) {
             if (i == 0 || arr[i - 1] <= arr[i])
-                ++i;
+                i++;
             else if (arr[i - 1] > arr[i]) {
                 swap(arr, i, i - 1);
-                --i;
+                i--;
             }
         }
     }
