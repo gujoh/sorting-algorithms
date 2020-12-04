@@ -112,4 +112,17 @@ public class SortingAlgorithms {
             }
         }
     }
+
+    public void oddEvenSort(int[] arr){
+        while (!sorted(arr)){
+            for (int i = 0; i < arr.length; i+=2) {
+                if (i >= 2 && arr[i] < arr[i - 1])
+                    swap(arr, i , i - 1);
+            }
+            for (int i = 1; i < arr.length; i+=2) {
+                if (i >= 3 && arr[i] < arr[i - 1])
+                    swap(arr, i , i - 1);
+            }
+        }
+    }
 }
