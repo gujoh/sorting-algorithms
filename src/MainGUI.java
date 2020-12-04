@@ -1,5 +1,4 @@
-import java.awt.Dimension;
-import java.awt.Graphics;
+import java.awt.*;
 import java.util.Random;
 import javax.swing.*;
 
@@ -10,6 +9,7 @@ public class MainGUI extends JPanel {
     private final static int HEIGHT = 800;
     private final static int ELEMENT_HEIGHT = 4;
     private final static int ELEMENT_WIDTH = WIDTH/ARRAY_LENGTH;
+    private final static int WAIT = 2000;
     Random rand = new Random();
     int[] arr;
 
@@ -39,23 +39,23 @@ public class MainGUI extends JPanel {
     }
 
     private void sortingAlgorithms(){
-        wait(2000);
+        wait(WAIT);
         bubbleSort();
-        wait(2000);
+        wait(WAIT);
         shuffleArray();
-        wait(2000);
+        wait(WAIT);
         selectionSort();
-        wait(2000);
+        wait(WAIT);
         shuffleArray();
-        wait(2000);
+        wait(WAIT);
         selectionSort2();
-        wait(2000);
+        wait(WAIT);
         shuffleArray();
-        wait(2000);
+        wait(WAIT);
         cocktailShakerSort();
-        wait(2000);
+        wait(WAIT);
         shuffleArray();
-        wait(2000);
+        wait(WAIT);
         insertionSort();
         /*wait(2000);                   //Uncomment for Bogosort
         shuffleArray();
@@ -109,7 +109,7 @@ public class MainGUI extends JPanel {
         }
     }
 
-    private void selectionSort(){
+    private void selectionSort(){               //Do not think this is a selection sort.
         for (int i = 0; i < arr.length; i++) {
             for (int j = i + 1; j < arr.length; j++) {
                 if (arr[j] < arr[i])
@@ -120,7 +120,7 @@ public class MainGUI extends JPanel {
 
     private void selectionSort2(){
         for (int i = 0; i < arr.length; i++) {
-            wait(50);
+            wait(60);
             repaint();
             int temp = arr[i], index = i;
             for (int j = i + 1; j < arr.length; j++) {
@@ -185,7 +185,7 @@ public class MainGUI extends JPanel {
 
     public static void main(String[] args){
         SwingUtilities.invokeLater(() -> {
-            JFrame frame = new JFrame("Sort");
+            JFrame frame = new JFrame("Sorting Algorithm Visualizer");
             frame.add(new MainGUI());
             frame.pack();
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
