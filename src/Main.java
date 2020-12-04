@@ -59,6 +59,16 @@ public class Main {
         System.out.println("COMB SORT");
         sort.combSort(arr);
         printAndShuffle(arr);
+
+        //Shell sort
+        System.out.println("SHELL SORT");
+        sort.shellSort(arr);
+        printAndShuffle(arr);
+
+        //Weird Shell sort variation
+        System.out.println("WEIRD SHELL SORT VARIATION");
+        sort.weirdShellSortVariation(arr);
+        printAndShuffle(arr);
     }
 
     private static void printAndShuffle(int[] arr){

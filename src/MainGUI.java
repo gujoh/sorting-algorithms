@@ -70,6 +70,14 @@ public class MainGUI extends JPanel {
         shuffleArray();
         wait(WAIT);
         combSort();
+        wait(WAIT);
+        shuffleArray();
+        wait(WAIT);
+        shellSort();
+        wait(WAIT);
+        shuffleArray();
+        wait(WAIT);
+        weirdShellSortVariation();
         /*wait(2000);                   //Uncomment for Bogosort
         shuffleArray();
         bogoSort();
@@ -210,6 +218,27 @@ public class MainGUI extends JPanel {
                     swap(arr, j, j + offset, 20);
             }
             offset = Math.max(initialOffset/(int)Math.pow(k, i), 1);
+        }
+    }
+
+    public void shellSort(){
+        int offset = arr.length/2;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length - offset; j++) {
+                if (arr[j] > arr[j + offset])
+                    swap(arr, j, j + offset, 10);
+            }
+            offset = (int)Math.max(offset/1.2, 1);
+        }
+    }
+    public void weirdShellSortVariation() {
+        int offset = arr.length - 1;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length - offset; j++) {
+                if (arr[j] > arr[j + offset])
+                    swap(arr, j, j + offset, 10);
+            }
+            offset = Math.max(--offset, 1);
         }
     }
 
