@@ -39,6 +39,7 @@ public class MainGUI extends JPanel {
     }
 
     private void sortingAlgorithms(){
+        oddEvenSort();
         wait(WAIT);
         bubbleSort();
         wait(WAIT);
@@ -185,13 +186,15 @@ public class MainGUI extends JPanel {
 
     public void oddEvenSort(){
         while (!sorted()){
-            for (int i = 0; i < arr.length; i+=2) {
-                if (i >= 2 && arr[i] < arr[i - 1])
-                    swap(arr, i , i - 1);
+            for (int i = 0; i < arr.length - 1; i+=2) {
+                if (arr[i] > arr[i + 1]) {
+                    swap(arr, i, i + 1);
+                }
             }
-            for (int i = 1; i < arr.length; i+=2) {
-                if (i >= 3 && arr[i] < arr[i - 1])
-                    swap(arr, i , i - 1);
+            for (int i = 1; i < arr.length - 1; i+=2) {
+                if (arr[i] > arr[i + 1]) {
+                    swap(arr, i, i + 1);
+                }
             }
         }
     }
