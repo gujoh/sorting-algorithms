@@ -51,7 +51,7 @@ public class SortingAlgorithms {
         }
     }
 
-    public void selectionSort(int[] arr){                       //Is this actually a selection sort?
+    public void whatIsThisSortCalled(int[] arr){                //Is this actually a selection sort?
         for (int i = 0; i < arr.length; i++) {                  //Or is selectionSort2() better despite being a little longer?
             for (int j = i + 1; j < arr.length; j++) {          //This method swaps the value of index i in the array
                 if (arr[j] < arr[i])                            //as soon as it finds a smaller value to the right of it.
@@ -60,7 +60,7 @@ public class SortingAlgorithms {
         }                                                       //and found a value smaller than i.
     }
 
-    public void selectionSort2(int[] arr){
+    public void selectionSort(int[] arr){
         for (int i = 0; i < arr.length; i++) {
             int temp = arr[i], index = i;
             for (int j = i + 1; j < arr.length; j++) {
@@ -99,5 +99,17 @@ public class SortingAlgorithms {
     public void bogoSort(int[] arr){
         while(!sorted(arr))
             shuffleArray(arr);
+    }
+
+    public void gnomeSort(int[] arr) {
+        int i = 0;
+        while (i < arr.length) {
+            if (i == 0 || arr[i - 1] <= arr[i])
+                ++i;
+            else if (arr[i - 1] > arr[i]) {
+                swap(arr, i, i - 1);
+                --i;
+            }
+        }
     }
 }

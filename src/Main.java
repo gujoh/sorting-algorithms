@@ -18,13 +18,13 @@ public class Main {
         printAndShuffle(arr);
 
         //Selection sort v.1
-        System.out.println("SELECTION SORT V.1");
-        sort.selectionSort(arr);
+        System.out.println("WHAT IS THIS SORT??");
+        sort.whatIsThisSortCalled(arr);
         printAndShuffle(arr);
 
         //Selection sort v.2
-        System.out.println("SELECTION SORT V.2");
-        sort.selectionSort2(arr);
+        System.out.println("SELECTION SORT");
+        sort.selectionSort(arr);
         printAndShuffle(arr);
 
         //Cocktail shaker sort
@@ -35,6 +35,11 @@ public class Main {
         //Insertion sort
         System.out.println("INSERTION SORT");
         sort.insertionSort(arr);
+        printAndShuffle(arr);
+
+        //Gnome sort
+        System.out.println("GNOME SORT");
+        sort.gnomeSort(arr);
         printAndShuffle(arr);
 
         //Bogosort
